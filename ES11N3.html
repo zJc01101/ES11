@@ -1,0 +1,26 @@
+<script>
+    class Employee {
+        * pay() {
+            try {
+                yield 7345.67;
+                yield 10200.52;
+                yield 8040.16;
+
+            } catch {
+                yield '00000.00'
+            }
+        }
+    }
+    const emp = new Employee();
+    const p1 = emp.pay();
+    console.log(p1.next());
+    console.log(p1.next());
+    console.log(p1.throw());
+    console.log(p1.next());
+
+
+    const p2 = Array.from(emp.pay());
+    p2.forEach(element => {
+        console.log(element);
+    });
+</script>

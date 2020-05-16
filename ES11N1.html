@@ -1,0 +1,37 @@
+<script>
+    function* getCourse(...args) {
+        yield* args.filter(i => i.courseAttrib == '专业课');
+        yield args.find(i => i.courseAttrib == '专业课基础课');
+
+    }
+    let courses = [{
+            courseNmae: 'php',
+            courseAttrib: '专业课'
+        },
+        {
+            courseNmae: 'javascript',
+            courseAttrib: '专业课基础课'
+        },
+        {
+            courseNmae: 'html5',
+            courseAttrib: '专业课'
+        },
+        {
+            courseNmae: 'Vue',
+            courseAttrib: '专业课'
+        },
+        {
+            courseNmae: 'photoshop',
+            courseAttrib: '专业课基础课'
+        },
+        {
+            courseNmae: 'React',
+            courseAttrib: '专业课'
+        },
+    ];
+    let cur = getCourse(...courses);
+    for (let c of cur) {
+        console.log(c);
+
+    }
+</script>
